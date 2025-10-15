@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
 //  Copyright (C) Gabriel Taubin
-//  Time-stamp: <2025-08-05 16:33:49 taubin>
+//  Time-stamp: <2025-09-16 19:19:29 taubin>
 //------------------------------------------------------------------------
 //
 // Edges.hpp
@@ -87,7 +87,7 @@ public:
   // int iE,iV0,iV1;
   // for(iE=0;iE<nE;iE++) {
   //   iV0 = edges.getVertex0(iE);
-  //   iV1 = edges.getVertex0(iE);
+  //   iV1 = edges.getVertex1(iE);
   //   // ...
   // }
 

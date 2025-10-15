@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 4.0)
+
+set(CMAKE_OSX_DEPLOYMENT_TARGET "15")
 
 project(dgp2025)
 

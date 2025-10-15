@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
 //  Copyright (C) Gabriel Taubin
-//  Time-stamp: <2025-08-05 16:34:28 taubin>
+//  Time-stamp: <2025-09-16 19:26:28 taubin>
 //------------------------------------------------------------------------
 //
 // HalfEdges.cpp (Assignment 2)
@@ -69,7 +69,7 @@ HalfEdges::HalfEdges(const int nVertices, const vector<int>&  coordIndex):
   //     if 
   //     _twin[iC] should be equal to the corner index of the twin half edge 
   //   if _coordIndex[iC]<0 then
-  //   _face[
+  //   _face[iC]==
   
   int nV = nVertices;
   int nC = static_cast<int>(_coordIndex.size()); // number of corners

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
 //  Copyright (C) Gabriel Taubin
-//  Time-stamp: <2025-08-05 16:39:13 taubin>
+//  Time-stamp: <2025-10-20 11:20:32 taubin>
 //------------------------------------------------------------------------
 //
 // dgpTest2c.cpp
@@ -137,27 +137,11 @@ int main(int argc, char **argv) {
   AppLoader loaderFactory;
   AppSaver  saverFactory;
 
-  // register input file loaders
-  LoaderPly* plyLoader = new LoaderPly();
-  loaderFactory.registerLoader(plyLoader);
-  LoaderStl* stlLoader = new LoaderStl();
-  loaderFactory.registerLoader(stlLoader);
-  LoaderWrl* wrlLoader = new LoaderWrl();
-  loaderFactory.registerLoader(wrlLoader);
-
   //  If SaverPly::setDefaultDataType is used, it must be called
   //  before the Saver constructor; otherwise SaverPly::setDataType
   //  should be called after to set the proper value for the private
   //  variable SaverPly::_dataType before this instance of SaverPly is
   //  used
-
-  // register output file savers  
-  SaverPly* plySaver = new SaverPly();
-  saverFactory.registerSaver(plySaver);
-  SaverStl* stlSaver = new SaverStl();
-  saverFactory.registerSaver(stlSaver);
-  SaverWrl* wrlSaver = new SaverWrl();
-  saverFactory.registerSaver(wrlSaver);
 
   SaverStl::FileType stlFt =
     (D._binaryOutput)?SaverStl::FileType::BINARY:SaverStl::FileType::ASCII;
@@ -166,6 +150,22 @@ int main(int argc, char **argv) {
   Ply::DataType plyDt =
     (D._binaryOutput)?Ply::DataType::BINARY_LITTLE_ENDIAN:Ply::DataType::ASCII;
   plySaver->setDataType(plyDt);
+
+  // register input file loaders
+  LoaderPly* plyLoader = new LoaderPly();
+  loaderFactory.registerLoader(plyLoader);
+  LoaderStl* stlLoader = new LoaderStl();
+  loaderFactory.registerLoader(stlLoader);
+  LoaderWrl* wrlLoader = new LoaderWrl();
+  loaderFactory.registerLoader(wrlLoader);
+
+  // register output file savers  
+  SaverPly* plySaver = new SaverPly();
+  saverFactory.registerSaver(plySaver);
+  SaverStl* stlSaver = new SaverStl();
+  saverFactory.registerSaver(stlSaver);
+  SaverWrl* wrlSaver = new SaverWrl();
+  saverFactory.registerSaver(wrlSaver);
 
   if(D._debug) {
     SaverPly::setOstream(&cout);

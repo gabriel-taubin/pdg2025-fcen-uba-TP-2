@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
 //  Copyright (C) Gabriel Taubin
-//  Time-stamp: <2025-08-05 16:38:30 taubin>
+//  Time-stamp: <2025-10-20 11:19:49 taubin>
 //------------------------------------------------------------------------
 //
 // dgpTest2a.cpp
@@ -127,6 +127,14 @@ int main(int argc, char **argv) {
   AppLoader loaderFactory;
   AppSaver  saverFactory;
 
+  SaverStl::FileType stlFt =
+    (D._binaryOutput)?SaverStl::FileType::BINARY:SaverStl::FileType::ASCII;
+  StlSaver::setFileType(stlFt);
+
+  Ply::DataType plyDt =
+    (D._binaryOutput)?Ply::DataType::BINARY_LITTLE_ENDIAN:Ply::DataType::ASCII;
+  SaverPly::setDefaultDataType(plyDt);
+
   // register input file loaders
   LoaderPly* plyLoader = new LoaderPly();
   loaderFactory.registerLoader(plyLoader);
@@ -142,14 +150,6 @@ int main(int argc, char **argv) {
   saverFactory.registerSaver(stlSaver);
   SaverWrl* wrlSaver = new SaverWrl();
   saverFactory.registerSaver(wrlSaver);
-
-  SaverStl::FileType stlFt =
-    (D._binaryOutput)?SaverStl::FileType::BINARY:SaverStl::FileType::ASCII;
-  stlSaver->setFileType(stlFt);
-
-  Ply::DataType plyDt =
-    (D._binaryOutput)?Ply::DataType::BINARY_LITTLE_ENDIAN:Ply::DataType::ASCII;
-  SaverPly::setDefaultDataType(plyDt);
 
   if(D._debug) {
     SaverPly::setOstream(&cout);

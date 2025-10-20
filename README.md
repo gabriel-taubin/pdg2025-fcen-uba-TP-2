@@ -1,11 +1,11 @@
-** pdg2025-fcen-uba-TP-2 **
+-fcen-uba-TP-2 **
 ** 2025 Procesamiento de Geometría Digital (Digital Geometry Processing) **
 
-Los archivos están organizados como en la Tarea 1 y el proceso de
+Los archivos están organizados como en el Trabajo Practico 1 y el proceso de
 compilación es el mismo.
 
 Antes de compilar la aplicación por primera vez, edite el archivo
-src/gui/GuiStrings.hpp o cópielo de la Tarea 1.
+src/gui/GuiStrings.hpp o cópielo del Trabajo Practico 1.
 
 Se incluyen instrucciones adicionales como comentarios en los archivos
 fuente.
@@ -21,7 +21,7 @@ Tarea 1)
 - Extienda LoaderStl y SaverStl para que admitan archivos STL
   binarios. Las partes binarias ya están implementadas. Solo necesita
   copiar y pegar, y probablemente reformatear, parte del código que
-  escribió en la Tarea 1.
+  escribió en el Trabajo Practico 1.
 
 - Agregue compatibilidad con archivos PLY registrando LoaderPly y
   SaverPly en las fábricas de cargadores y guardadores. Tenga en
@@ -92,8 +92,8 @@ Tarea 3)
 
 Información adicional:
 
-- Copie la implementación de la clase Faces de la Tarea 1 a la Tarea
-  2.
+- Copie la implementación de la clase Faces del Trabajo Practico 1 al
+  Trabajo Practico 2.
 
 - En la carpeta test, todos los archivos son nuevos.
 
